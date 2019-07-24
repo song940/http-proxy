@@ -1,7 +1,11 @@
-const http = require('http');
 
-class HTTPProxy extends http.Server {
-  
+class HTTPProxy {
+
 }
+
+HTTPProxy.Server = require('./server');
+HTTPProxy.createServer = options => {
+  return new HTTPProxy.Server(options);
+};
 
 module.exports = HTTPProxy;
